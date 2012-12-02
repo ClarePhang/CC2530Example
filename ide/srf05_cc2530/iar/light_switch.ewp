@@ -12,7 +12,7 @@
       <name>General</name>
       <archiveVersion>1</archiveVersion>
       <data>
-        <version>3</version>
+        <version>5</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -141,16 +141,6 @@
           <state>0</state>
         </option>
         <option>
-          <name>GRuntimeLibSelect</name>
-          <version>0</version>
-          <state>4</state>
-        </option>
-        <option>
-          <name>GRuntimeLibSelectSlave</name>
-          <version>0</version>
-          <state>4</state>
-        </option>
-        <option>
           <name>RTDescription</name>
           <state>Use the legacy C runtime library.</state>
         </option>
@@ -229,13 +219,44 @@
           <version>0</version>
           <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
         </option>
+        <option>
+          <name>PDATA 8-15 register address</name>
+          <state>0xA0</state>
+        </option>
+        <option>
+          <name>PDATA 16-31 register address</name>
+          <state>0xEA</state>
+        </option>
+        <option>
+          <name>General Far22 Heap Size</name>
+          <state>0xFFF</state>
+        </option>
+        <option>
+          <name>GeneralMisraVer</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GeneralMisraRules04</name>
+          <version>0</version>
+          <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
+        </option>
+        <option>
+          <name>GRuntimeLibSelect2</name>
+          <version>0</version>
+          <state>3</state>
+        </option>
+        <option>
+          <name>GRuntimeLibSelectSlave2</name>
+          <version>0</version>
+          <state>3</state>
+        </option>
       </data>
     </settings>
     <settings>
       <name>ICC8051</name>
-      <archiveVersion>3</archiveVersion>
+      <archiveVersion>4</archiveVersion>
       <data>
-        <version>6</version>
+        <version>9</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -402,10 +423,6 @@
           <state>1</state>
         </option>
         <option>
-          <name>CCLangSelect</name>
-          <state>0</state>
-        </option>
-        <option>
           <name>NoUBROFMessages</name>
           <state>0</state>
         </option>
@@ -437,11 +454,6 @@
           <state>0</state>
         </option>
         <option>
-          <name>CCStdIncludePath</name>
-          <state>$TOOLKIT_DIR$\INC\</state>
-          <state>$TOOLKIT_DIR$\INC\CLIB\</state>
-        </option>
-        <option>
           <name>CompilerMisraRules98</name>
           <version>0</version>
           <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
@@ -471,13 +483,38 @@
           <name>CCOptLevelSlave</name>
           <state>3</state>
         </option>
+        <option>
+          <name>CompilerMisraRules04</name>
+          <version>0</version>
+          <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
+        </option>
+        <option>
+          <name>IccLang</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccCDialect</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccAllowVLA</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IccCppDialect</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IccRelaxedFpPrecision</name>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
       <name>A8051</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>4</version>
+        <version>5</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -582,11 +619,6 @@
           <state>0</state>
         </option>
         <option>
-          <name>AIncludes</name>
-          <state>$TOOLKIT_DIR$\INC\</state>
-          <state>$PROJ_DIR$\components\radios\cc2530\</state>
-        </option>
-        <option>
           <name>ADefines</name>
           <state></state>
         </option>
@@ -626,6 +658,14 @@
           <name>AMaxErrNum</name>
           <state>100</state>
         </option>
+        <option>
+          <name>Ignore standard include paths</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>Include directories</name>
+          <state>$PROJ_DIR$\COMPONENTS\RADIOS\CC2530\</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -653,7 +693,7 @@
       <name>XLINK</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>16</version>
+        <version>17</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -728,7 +768,7 @@
         </option>
         <option>
           <name>XclFile</name>
-		  <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_cc2530F256.xcl</state>		  		  
+          <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_cc2530F256.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -963,6 +1003,10 @@
         <option>
           <name>CrcInitialValue</name>
           <state>0x0</state>
+        </option>
+        <option>
+          <name>Linker Far22 Heap Size</name>
+          <state>1</state>
         </option>
       </data>
     </settings>
