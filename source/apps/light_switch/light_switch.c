@@ -107,8 +107,8 @@ static uint8 appSelectMode(void);
 */
 static void appLight()
 {
-    halLcdWriteLine(HAL_LCD_LINE_1, "Light");
-    halLcdWriteLine(HAL_LCD_LINE_2, "Ready");
+    //halLcdWriteLine(HAL_LCD_LINE_1, "Light");
+    //halLcdWriteLine(HAL_LCD_LINE_2, "Ready");
 #ifdef ASSY_EXP4618_CC2420
     halLcdClearLine(1);
     halLcdWriteSymbol(HAL_LCD_SYMBOL_RX, 1);
@@ -149,9 +149,9 @@ static void appLight()
 */
 static void appSwitch()
 {
-    halLcdWriteLine(HAL_LCD_LINE_1, "Switch");
-    halLcdWriteLine(HAL_LCD_LINE_2, "Joystick Push");
-    halLcdWriteLine(HAL_LCD_LINE_3, "Send Command");
+    //halLcdWriteLine(HAL_LCD_LINE_1, "Switch");
+    //halLcdWriteLine(HAL_LCD_LINE_2, "Joystick Push");
+    //halLcdWriteLine(HAL_LCD_LINE_3, "Send Command");
 #ifdef ASSY_EXP4618_CC2420
     halLcdClearLine(1);
     halLcdWriteSymbol(HAL_LCD_SYMBOL_TX, 1);
@@ -170,7 +170,7 @@ static void appSwitch()
 
     // Main loop
     while (TRUE) {
-        if( halJoystickPushed() ) {
+      if(halButtonPushed() == HAL_BUTTON_1){//**************by boo
 
             basicRfSendPacket(LIGHT_ADDR, pTxData, APP_PAYLOAD_LENGTH);
 
@@ -179,7 +179,6 @@ static void appSwitch()
             halMcuSetLowPowerMode(HAL_MCU_LPM_3); // Will turn on global
             // interrupt enable
             halIntOn();
-
         }
     }
 }
@@ -200,7 +199,7 @@ static void appSwitch()
 */
 void main(void)
 {
-    uint8 appMode = NONE;
+    //uint8 appMode = NONE;
 
     // Config basicRF
     basicRfConfig.panId = PAN_ID;
@@ -223,27 +222,27 @@ void main(void)
     halLedSet(1);
 
     // Print Logo and splash screen on LCD
-    utilPrintLogo("Light Switch");
+    //utilPrintLogo("Light Switch");
 
     // Wait for user to press S1 to enter menu
-    while (halButtonPushed()!=HAL_BUTTON_1);
-    halMcuWaitMs(350);
-    halLcdClear();
+    //while (halButtonPushed()!=HAL_BUTTON_1);
+    //halMcuWaitMs(350);
+    //halLcdClear();
 
     // Set application role
-    appMode = appSelectMode();
-    halLcdClear();
+    //appMode = appSelectMode();
+    //halLcdClear();
 
     // Transmitter application
-    if(appMode == SWITCH) {
+    //if(appMode == SWITCH) {
         // No return from here
         appSwitch();
-    }
+    //}
     // Receiver application
-    else if(appMode == LIGHT) {
+    //else if(appMode == LIGHT) {
         // No return from here
-        appLight();
-    }
+        //appLight();
+    //}
     // Role is undefined. This code should not be reached
     HAL_ASSERT(FALSE);
 }
@@ -282,7 +281,7 @@ static uint8 appSelectMode(void)
   its documentation for any purpose.
 
   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
-  PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+  PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,

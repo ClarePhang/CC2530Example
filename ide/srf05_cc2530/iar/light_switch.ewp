@@ -728,7 +728,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>lnk51ew_cc2530b.xcl</state>
+		  <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_cc2530F256.xcl</state>		  		  
         </option>
         <option>
           <name>XclFileSlave</name>

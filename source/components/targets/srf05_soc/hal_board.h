@@ -65,20 +65,20 @@
 #define HAL_BOARD_IO_LCD_MODE_PORT     0
 #define HAL_BOARD_IO_LCD_MODE_PIN      0
 
-// LEDs
-#define HAL_BOARD_IO_LED_1_PORT        1   // Green
+// LEDs 原生代码与实际开发板的IO口有部分不一样
+#define HAL_BOARD_IO_LED_1_PORT        1   // Green **** LED1 by zhy
 #define HAL_BOARD_IO_LED_1_PIN         0
-#define HAL_BOARD_IO_LED_2_PORT        1   // Red
+#define HAL_BOARD_IO_LED_2_PORT        1   // Red   **** LED2 by zhy
 #define HAL_BOARD_IO_LED_2_PIN         1
 #define HAL_BOARD_IO_LED_3_PORT        1   // Yellow
 #define HAL_BOARD_IO_LED_3_PIN         4
 #define HAL_BOARD_IO_LED_4_PORT        0   // Orange
 #define HAL_BOARD_IO_LED_4_PIN         1
 
-
-// Buttons
+// Buttons  按键的IOC口不一样
 #define HAL_BOARD_IO_BTN_1_PORT        0   // Button S1
-#define HAL_BOARD_IO_BTN_1_PIN         1
+//#define HAL_BOARD_IO_BTN_1_PIN         1
+#define HAL_BOARD_IO_BTN_1_PIN         4
 
 // Potmeter
 #define HAL_POTMETER_ADC_PORT               0
@@ -94,9 +94,8 @@
 #define HAL_BOARD_IO_UART_RTS_PORT          0
 #define HAL_BOARD_IO_UART_RTS_PIN           5
 
-
 // Debounce
-#define HAL_DEBOUNCE(expr)    { int i; for (i=0; i<500; i++) { if (!(expr)) i = 0; } }
+#define HAL_DEBOUNCE(expr)    {int i;for (i=0; i<500; i++){ if (!(expr)) i = 0; } }
 
 /***********************************************************************************
  * MACROS
